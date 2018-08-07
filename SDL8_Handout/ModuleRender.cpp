@@ -12,11 +12,9 @@ ModuleRender::ModuleRender() : Module()
 	camera.h = SCREEN_HEIGHT;
 }
 
-// Destructor
 ModuleRender::~ModuleRender()
 {}
 
-// Called before render is available
 bool ModuleRender::Init()
 {
 	LOG("Creating Renderer context");
@@ -39,7 +37,6 @@ bool ModuleRender::Init()
 	return ret;
 }
 
-// Called every draw update
 update_status ModuleRender::PreUpdate()
 {
 	SDL_RenderClear(renderer);
@@ -73,21 +70,17 @@ update_status ModuleRender::PostUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-// Called before quitting
 bool ModuleRender::CleanUp()
 {
 	LOG("Destroying renderer");
 
-	//Destroy window
 	if(renderer != NULL)
-	{
 		SDL_DestroyRenderer(renderer);
-	}
 
 	return true;
 }
 
-// Blit to screen
+//Blit to screen
 bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, float speed)
 {
 	bool ret = true;

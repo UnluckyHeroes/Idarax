@@ -127,9 +127,6 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 	}
 }
 
-// -------------------------------------------------------------
-// -------------------------------------------------------------
-
 Particle::Particle()
 {
 	position.SetToZero();

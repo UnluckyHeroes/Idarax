@@ -34,12 +34,6 @@ bool ModuleSceneSpace::Start()
 	App->collision->AddCollider({1375, 145, 111, 96}, COLLIDER_WALL);
 
 	// Enemies ---
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBIRD, 600, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBIRD, 625, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBIRD, 640, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::REDBIRD, 665, 80);
-	
-	// TODO 1: Add a new wave of red birds
 	
 	return true;
 }

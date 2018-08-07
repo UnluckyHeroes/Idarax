@@ -12,7 +12,7 @@
 
 ModulePlayer::ModulePlayer()
 {
-	// idle animation (just the ship)
+	// idle animation (just the player)
 	idle.PushBack({66, 1, 32, 14});
 
 	// move upwards
@@ -107,7 +107,7 @@ update_status ModulePlayer::Update()
 
 	col->SetPos(position.x, position.y);
 
-	// Draw everything --------------------------------------
+	// Draw everything
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 
