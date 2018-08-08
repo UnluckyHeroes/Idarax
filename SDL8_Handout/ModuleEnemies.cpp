@@ -27,7 +27,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 
-	sprites = App->textures->Load("rtype/enemies.png");
+	sprites = App->textures->Load("rtype/enemies.png"); //Change this path
 
 	return true;
 }
