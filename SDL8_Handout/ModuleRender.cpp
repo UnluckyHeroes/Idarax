@@ -20,7 +20,7 @@ bool ModuleRender::Init()
 	LOG("Creating Renderer context");
 	bool ret = true;
 	Uint32 flags = 0;
-	
+  
 	if(REN_VSYNC == true)
 	{
 		flags |= SDL_RENDERER_PRESENTVSYNC;
@@ -59,6 +59,7 @@ update_status ModuleRender::Update()
 
 	if(App->input->keyboard[SDL_SCANCODE_6] == KEY_STATE::KEY_REPEAT)
 		camera.x += speed;
+
 
 	return update_status::UPDATE_CONTINUE;
 }

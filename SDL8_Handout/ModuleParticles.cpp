@@ -25,7 +25,6 @@ ModuleParticles::ModuleParticles()
 	laser.anim.PushBack({232, 103, 16, 12});
 	laser.anim.PushBack({249, 103, 16, 12});
 	laser.anim.speed = 0.2f;
-	laser.speed.x = 5;
 	laser.life = 3000;
 }
 
