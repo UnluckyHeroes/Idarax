@@ -48,16 +48,16 @@ update_status ModuleRender::Update()
 {
 	int speed = 3;
 
-	if(App->input->keyboard[SDL_SCANCODE_8] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_3] == KEY_STATE::KEY_REPEAT)
 		camera.y += speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_5] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_4] == KEY_STATE::KEY_REPEAT)
 		camera.y -= speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_4] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_1] == KEY_STATE::KEY_REPEAT)
 		camera.x -= speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_6] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_2] == KEY_STATE::KEY_REPEAT)
 		camera.x += speed;
 
 
