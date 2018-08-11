@@ -19,7 +19,7 @@ bool ModuleSceneIntro::Start()
 {
 	LOG("Loading space intro");
 	
-	background = App->textures->Load("rtype/intro.png");
+	background = App->textures->Load("rtype/UnluckyLogoRed.png");
 
 	//fx = App->audio->LoadFx("rtype/starting.wav");
 	App->render->camera.x = App->render->camera.y = 0;

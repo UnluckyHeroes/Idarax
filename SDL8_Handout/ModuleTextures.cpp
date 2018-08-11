@@ -14,11 +14,9 @@ ModuleTextures::ModuleTextures() : Module()
 		textures[i] = nullptr;
 }
 
-// Destructor
 ModuleTextures::~ModuleTextures()
 {}
 
-// Called before render is available
 bool ModuleTextures::Init()
 {
 	LOG("Init Image library");
@@ -37,7 +35,6 @@ bool ModuleTextures::Init()
 	return ret;
 }
 
-// Called before q	uitting
 bool ModuleTextures::CleanUp()
 {
 	LOG("Freeing textures and Image library");
@@ -52,7 +49,7 @@ bool ModuleTextures::CleanUp()
 	return true;
 }
 
-// Load new texture from file path
+//Load new texture
 SDL_Texture* const ModuleTextures::Load(const char* path)
 {
 	SDL_Texture* texture = nullptr;
@@ -90,7 +87,7 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 	return texture;
 }
 
-// Load new texture from file path
+//Unload Texture
 bool ModuleTextures::Unload(SDL_Texture* texture)
 {
 	bool ret = false;

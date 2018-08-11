@@ -36,7 +36,6 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_ENEMY_SHOT][COLLIDER_ENEMY_SHOT] = false;
 }
 
-// Destructor
 ModuleCollision::~ModuleCollision()
 {}
 
@@ -129,7 +128,6 @@ update_status ModuleCollision::Update()
 	return UPDATE_CONTINUE;
 }
 
-// Called before quitting
 bool ModuleCollision::CleanUp()
 {
 	LOG("Freeing all colliders");

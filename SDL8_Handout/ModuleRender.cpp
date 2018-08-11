@@ -12,17 +12,15 @@ ModuleRender::ModuleRender() : Module()
 	camera.h = SCREEN_HEIGHT;
 }
 
-// Destructor
 ModuleRender::~ModuleRender()
 {}
 
-// Called before render is available
 bool ModuleRender::Init()
 {
 	LOG("Creating Renderer context");
 	bool ret = true;
 	Uint32 flags = 0;
-
+  
 	if(REN_VSYNC == true)
 	{
 		flags |= SDL_RENDERER_PRESENTVSYNC;
@@ -39,7 +37,6 @@ bool ModuleRender::Init()
 	return ret;
 }
 
-// Called every draw update
 update_status ModuleRender::PreUpdate()
 {
 	SDL_RenderClear(renderer);
@@ -51,17 +48,18 @@ update_status ModuleRender::Update()
 {
 	int speed = 3;
 
-	if(App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_3] == KEY_STATE::KEY_REPEAT)
 		camera.y += speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_4] == KEY_STATE::KEY_REPEAT)
 		camera.y -= speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_1] == KEY_STATE::KEY_REPEAT)
 		camera.x -= speed;
 
-	if(App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
+	if(App->input->keyboard[SDL_SCANCODE_2] == KEY_STATE::KEY_REPEAT)
 		camera.x += speed;
+
 
 	return update_status::UPDATE_CONTINUE;
 }
@@ -73,21 +71,17 @@ update_status ModuleRender::PostUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-// Called before quitting
 bool ModuleRender::CleanUp()
 {
 	LOG("Destroying renderer");
 
-	//Destroy window
 	if(renderer != NULL)
-	{
 		SDL_DestroyRenderer(renderer);
-	}
 
 	return true;
 }
 
-// Blit to screen
+//Blit to screen
 bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, float speed)
 {
 	bool ret = true;

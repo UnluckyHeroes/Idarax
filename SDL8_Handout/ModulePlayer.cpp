@@ -12,7 +12,7 @@
 
 ModulePlayer::ModulePlayer()
 {
-	// idle animation (just the ship)
+	// idle animation (just the player)
 	idle.PushBack({66, 1, 32, 14});
 
 	// move upwards
@@ -62,7 +62,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	position.x += 1; // Automatic movement
+	//position.x += 1; // Automatic movement
 
 	int speed = 1;
 
@@ -95,19 +95,48 @@ update_status ModulePlayer::Update()
 			current_animation = &up;
 		}
 	}
+  
+	//_______________________________________________________
 
-	if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+	/*if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
+		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, COLLIDER_PLAYER_SHOT);
+	}*/
+
+	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_DOWN) {
+		App->particles->laser.speed.x = 0;
+		App->particles->laser.speed.y = -5;
+		App->particles->AddParticle(App->particles->laser, position.x, position.y - 20, COLLIDER_PLAYER_SHOT);
+		
+	}
+	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_DOWN) {
+		App->particles->laser.speed.x = 0;
+		App->particles->laser.speed.y = +5;
+		App->particles->AddParticle(App->particles->laser, position.x, position.y + 20, COLLIDER_PLAYER_SHOT);
+		
+	}
+	if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_DOWN) {
+		App->particles->laser.speed.x = -5;
+		App->particles->laser.speed.y = 0;
+		App->particles->AddParticle(App->particles->laser, position.x - 20, position.y, COLLIDER_PLAYER_SHOT);
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_DOWN) {
+		App->particles->laser.speed.x = +5;
+		App->particles->laser.speed.y = 0;
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, COLLIDER_PLAYER_SHOT);
 	}
 
+	//__________________________________________________
+
+  
 	if(App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
 	   && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_IDLE)
 		current_animation = &idle;
 
 	col->SetPos(position.x, position.y);
 
-	// Draw everything --------------------------------------
+	// Draw everything
 	if(destroyed == false)
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 
