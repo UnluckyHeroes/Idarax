@@ -62,7 +62,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	position.x += 1; // Automatic movement
+	//position.x += 1; // Automatic movement
 
 	int speed = 1;
 
@@ -96,7 +96,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+	if((App->input->keyboard[SDL_SCANCODE_SPACE]) == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, COLLIDER_PLAYER_SHOT);
 	}
