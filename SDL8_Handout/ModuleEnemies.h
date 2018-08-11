@@ -2,6 +2,7 @@
 #define __ModuleEnemies_H__
 
 #include "Module.h"
+#include "p2Point.h"
 
 #define MAX_ENEMIES 100
 
@@ -9,6 +10,7 @@ enum ENEMY_TYPES
 {
 	NO_TYPE,
 
+	ENEMY_RAPIER,
 };
 
 class Enemy;
@@ -31,9 +33,11 @@ public:
 	update_status Update();
 	update_status PostUpdate();
 	bool CleanUp();
-	void OnCollision(Collider* c1, Collider* c2);
 
+
+	void OnCollision(Collider* c1, Collider* c2);
 	bool AddEnemy(ENEMY_TYPES type, int x, int y);
+	SDL_Texture* sprites;
 
 private:
 
@@ -43,7 +47,6 @@ private:
 
 	EnemyInfo queue[MAX_ENEMIES];
 	Enemy* enemies[MAX_ENEMIES];
-	SDL_Texture* sprites;
 };
 
 #endif // __ModuleEnemies_H__

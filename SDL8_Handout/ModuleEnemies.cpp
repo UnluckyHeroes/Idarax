@@ -8,6 +8,9 @@
 
 #define SPAWN_MARGIN 50
 
+//Include Enemies
+#include "EnemyRapier.h"
+
 
 //				 ---------------	IMPORTANT	-------------------------
 // We must add something to the switch in the EnemySpawn function each time we add an enemy
@@ -26,7 +29,7 @@ ModuleEnemies::~ModuleEnemies()
 
 bool ModuleEnemies::Start()
 {
-	App->textures->Load("Rickme/Graphics/enemies.png");
+	sprites = App->textures->Load("Rickme/Graphics/enemies.png");
 	return true;
 }
 
@@ -93,6 +96,10 @@ bool ModuleEnemies::CleanUp()
 			delete enemies[i];
 			enemies[i] = nullptr;
 		}
+
+		queue[i].type = ENEMY_TYPES::NO_TYPE;
+		queue[i].x = 0;
+		queue[i].y = 0;
 	}
 
 	return true;
@@ -134,20 +141,35 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 									break;
 
 							*/
-		}
-	}
-}
-
-void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
-{
-	for(uint i = 0; i < MAX_ENEMIES; ++i)
-	{
-		if(enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
-		{
-			enemies[i]->OnCollision(c2);
-			delete enemies[i];
-			enemies[i] = nullptr;
+		case ENEMY_TYPES::ENEMY_RAPIER:
+			enemies[i] = new EnemyRapier(info.x, info.y);
 			break;
 		}
 	}
 }
+
+void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
+
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
+
+			if (enemies[i]->life > 1) {
+				enemies[i]->life--;
+				//Mix_PlayChannel(-1, enemyHit, 0);
+				break;
+			}
+			else {
+
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			}
+		}
+	}
+}
+
+
+
+	
