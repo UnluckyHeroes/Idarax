@@ -21,7 +21,7 @@ bool ModuleScene1::Start()
 {
 	LOG("Loading space scene");
 	
-	background = App->textures->Load("rtype/Room1/Room1.png");
+	background = App->textures->Load("Rickme/Graphics/Room1/Room1.png");
 
 	App->player->Enable();
 	App->particles->Enable();

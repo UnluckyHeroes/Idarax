@@ -42,7 +42,7 @@ bool ModulePlayer::Start()
 {
 	LOG("Loading player");
 
-	graphics = App->textures->Load("rtype/Idara.png");
+	graphics = App->textures->Load("Rickme/Graphics/Idara.png");
 
 	destroyed = false;
 	position.x = 150;
