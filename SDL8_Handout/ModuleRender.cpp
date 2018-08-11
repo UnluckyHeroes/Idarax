@@ -20,7 +20,7 @@ bool ModuleRender::Init()
 	LOG("Creating Renderer context");
 	bool ret = true;
 	Uint32 flags = 0;
-
+  
 	if(REN_VSYNC == true)
 	{
 		flags |= SDL_RENDERER_PRESENTVSYNC;
@@ -46,7 +46,20 @@ update_status ModuleRender::PreUpdate()
 
 update_status ModuleRender::Update()	
 {
-	
+	int speed = 3;
+
+	if(App->input->keyboard[SDL_SCANCODE_8] == KEY_STATE::KEY_REPEAT)
+		camera.y += speed;
+
+	if(App->input->keyboard[SDL_SCANCODE_5] == KEY_STATE::KEY_REPEAT)
+		camera.y -= speed;
+
+	if(App->input->keyboard[SDL_SCANCODE_4] == KEY_STATE::KEY_REPEAT)
+		camera.x -= speed;
+
+	if(App->input->keyboard[SDL_SCANCODE_6] == KEY_STATE::KEY_REPEAT)
+		camera.x += speed;
+
 
 	return update_status::UPDATE_CONTINUE;
 }

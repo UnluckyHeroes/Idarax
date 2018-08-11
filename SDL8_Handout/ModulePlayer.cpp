@@ -95,6 +95,7 @@ update_status ModulePlayer::Update()
 			current_animation = &up;
 		}
 	}
+  
 	//_______________________________________________________
 
 	/*if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
@@ -127,6 +128,8 @@ update_status ModulePlayer::Update()
 	}
 
 	//__________________________________________________
+
+  
 	if(App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
 	   && App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_IDLE)
 		current_animation = &idle;
