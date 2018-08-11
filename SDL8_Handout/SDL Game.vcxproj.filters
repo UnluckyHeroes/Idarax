@@ -36,6 +36,9 @@
     <Filter Include="Modules\Enemies\Enemy Types">
       <UniqueIdentifier>{369e13c9-038e-4697-b867-4a7b41e3e1bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\Enemies\Enemy Types\Room1">
+      <UniqueIdentifier>{bff71028-5722-4d13-96ea-f77f1e137458}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -71,9 +74,6 @@
     <ClInclude Include="ModuleSceneIntro.h">
       <Filter>Modules\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleSceneSpace.h">
-      <Filter>Modules\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleInput.h">
       <Filter>Modules\Base\Controllers</Filter>
     </ClInclude>
@@ -94,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="ModuleWindow.h">
       <Filter>Modules\Base\Initializing</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleScene1.h">
+      <Filter>Modules\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyRapier.h">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +124,6 @@
     <ClCompile Include="ModuleSceneIntro.cpp">
       <Filter>Modules\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleSceneSpace.cpp">
-      <Filter>Modules\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleInput.cpp">
       <Filter>Modules\Base\Controllers</Filter>
     </ClCompile>
@@ -141,6 +144,12 @@
     </ClCompile>
     <ClCompile Include="ModuleWindow.cpp">
       <Filter>Modules\Base\Initializing</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleScene1.cpp">
+      <Filter>Modules\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyRapier.cpp">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

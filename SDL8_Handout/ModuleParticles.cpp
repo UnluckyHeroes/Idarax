@@ -35,11 +35,11 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	graphics = App->textures->Load("rtype/particles.png");
+	graphics = App->textures->Load("Rickme/Graphics/particles.png");
 
 	// Load particles fx particle
-	//explosion.fx = App->audio->LoadFx("rtype/explosion.wav");
-	//laser.fx = App->audio->LoadFx("rtype/laser.wav");
+	//explosion.fx = App->audio->LoadFx("Rickme/MusicSFX/SFX/explosion.wav");
+	//laser.fx = App->audio->LoadFx("Rickme/MusicSFX/SFX/laser.wav");
 
 	return true;
 }

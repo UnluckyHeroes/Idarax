@@ -26,6 +26,8 @@ public:
 	Animation idle;
 	Animation up;
 	Animation down;
+	Animation right;
+	Animation left;
 	iPoint position;
 	Collider* col;
 	bool destroyed = false;

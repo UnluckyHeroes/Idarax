@@ -19,9 +19,9 @@ bool ModuleSceneIntro::Start()
 {
 	LOG("Loading space intro");
 	
-	background = App->textures->Load("rtype/UnluckyLogoRed.png");
+	background = App->textures->Load("Rickme/Graphics/UnluckyLogoRed.png");
 
-	//fx = App->audio->LoadFx("rtype/starting.wav");
+	//fx = App->audio->LoadFx("Rickme/MusicSFX/SFX/starting.wav");
 	App->render->camera.x = App->render->camera.y = 0;
 	
 	return true;
@@ -44,7 +44,7 @@ update_status ModuleSceneIntro::Update()
 
 	if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->scene_space);
+		App->fade->FadeToBlack(this, (Module*)App->scene1);
 	}
 
 	return UPDATE_CONTINUE;
