@@ -71,9 +71,6 @@
     <ClInclude Include="ModuleSceneIntro.h">
       <Filter>Modules\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleSceneSpace.h">
-      <Filter>Modules\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleInput.h">
       <Filter>Modules\Base\Controllers</Filter>
     </ClInclude>
@@ -94,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="ModuleWindow.h">
       <Filter>Modules\Base\Initializing</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleScene1.h">
+      <Filter>Modules\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +118,6 @@
     <ClCompile Include="ModuleSceneIntro.cpp">
       <Filter>Modules\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleSceneSpace.cpp">
-      <Filter>Modules\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleInput.cpp">
       <Filter>Modules\Base\Controllers</Filter>
     </ClCompile>
@@ -141,6 +138,9 @@
     </ClCompile>
     <ClCompile Include="ModuleWindow.cpp">
       <Filter>Modules\Base\Initializing</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleScene1.cpp">
+      <Filter>Modules\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
