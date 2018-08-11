@@ -29,7 +29,7 @@ EnemyRapier::EnemyRapier(int x, int y) :Enemy(x, y) {
 	animation = &Idle;
 	collider = App->collision->AddCollider({ 0, 0, 24, 24 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	speed = 0.5f;
+	speed = 1.0f;
 	life = 5;
 	score = 100;
 }
@@ -75,6 +75,8 @@ void EnemyRapier::Move() {
 	if (angle <= 360 && angle >= 315) 
 		animation = &Right;*/
 
-	position.x += speed*0.02*(playerPosition.x - position.x); //MOVEMENT
-	position.y += speed*0.02*(playerPosition.y - position.y);
+	//position.x += speed*0.02*(playerPosition.x - position.x); //MOVEMENT
+	//position.y += speed*0.02*(playerPosition.y - position.y);
+	position.x += speed * -1*(SDL_cos(radians)); //MOVEMENT
+	position.y += speed * -1*(SDL_sin(radians));
 }

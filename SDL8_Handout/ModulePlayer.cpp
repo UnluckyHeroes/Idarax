@@ -72,7 +72,7 @@ update_status ModulePlayer::Update()
 {
 	//position.x += 1; // Automatic movement
 
-	int speed = 1;
+	int speed = 2;
 
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && (position.x - 1) > 70)
 		position.x -= speed;
