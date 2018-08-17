@@ -10,6 +10,7 @@
 
 //Include Enemies
 #include "EnemyRapier.h"
+#include "EnemyCranberry.h"
 
 
 //				 ---------------	IMPORTANT	-------------------------
@@ -143,6 +144,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 							*/
 		case ENEMY_TYPES::ENEMY_RAPIER:
 			enemies[i] = new EnemyRapier(info.x, info.y);
+			break;
+		case ENEMY_TYPES::ENEMY_CRANBERRY:
+			enemies[i] = new EnemyCranberry(info.x, info.y);
 			break;
 		}
 	}

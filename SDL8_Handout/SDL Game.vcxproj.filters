@@ -101,6 +101,9 @@
     <ClInclude Include="EnemyRapier.h">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyCranberry.h">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -149,6 +152,9 @@
       <Filter>Modules\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="EnemyRapier.cpp">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyCranberry.cpp">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClCompile>
   </ItemGroup>

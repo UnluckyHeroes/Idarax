@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ENEMY_RAPIER_H__
-#define ENEMY_RAPIER_H__
+#ifndef ENEMYRAPIER_H__
+#define ENEMYRAPIER_H__
 
 #include "Enemy.h"
 #include "Animation.h"
@@ -25,10 +25,6 @@ public:
 public:
 
 	iPoint playerPosition;
-	bool PlayerInTheRoom = false; //WTF? Should be in Enemies general
-
-public:
-
 	float radians;
 	float angle;
 };
