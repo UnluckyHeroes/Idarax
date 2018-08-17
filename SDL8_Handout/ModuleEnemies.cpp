@@ -11,6 +11,7 @@
 //Include Enemies
 #include "EnemyRapier.h"
 #include "EnemyCranberry.h"
+#include "EnemyBile.h"
 
 
 //				 ---------------	IMPORTANT	-------------------------
@@ -148,17 +149,36 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::ENEMY_CRANBERRY:
 			enemies[i] = new EnemyCranberry(info.x, info.y);
 			break;
+		case ENEMY_TYPES::ENEMY_BILE:
+			enemies[i] = new EnemyBile(info.x, info.y);
+			break;
 		}
 	}
 }
 
 void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 
+	
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 
-			if (enemies[i]->life > 1) {
+			if (c1->type == COLLIDER_WALL || c2->type == COLLIDER_WALL) {
+
+				if (enemies[i]->position.x < (SCREEN_SIZE / 2))
+					enemies[i]->position.x += enemies[i]->speed;
+
+				else if (enemies[i]->position.x > (SCREEN_SIZE / 2))
+					enemies[i]->position.x -= enemies[i]->speed;
+
+				else if (enemies[i]->position.y > 100)
+					enemies[i]->position.y -= (enemies[i]->speed);
+
+				else if (enemies[i]->position.y < 100)
+					enemies[i]->position.y += (enemies[i]->speed);
+
+			}
+			else if (enemies[i]->life > 1) {
 				enemies[i]->life--;
 				//Mix_PlayChannel(-1, enemyHit, 0);
 				break;

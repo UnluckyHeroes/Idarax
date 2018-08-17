@@ -12,6 +12,7 @@ enum ENEMY_TYPES
 
 	ENEMY_CRANBERRY,
 	ENEMY_RAPIER,
+	ENEMY_BILE,
 };
 
 class Enemy;

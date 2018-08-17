@@ -38,7 +38,8 @@ bool ModuleScene1::Start()
 
 	// Enemies ---
 	//App->enemies->AddEnemy(ENEMY_TYPES::ENEMY_RAPIER, 300, 200);
-	App->enemies->AddEnemy(ENEMY_CRANBERRY, 300, 200);
+	//App->enemies->AddEnemy(ENEMY_CRANBERRY, 300, 200);
+	App->enemies->AddEnemy(ENEMY_BILE, 300, 100);
 	
 	return true;
 }

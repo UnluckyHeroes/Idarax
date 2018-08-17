@@ -30,7 +30,7 @@ EnemyRapier::EnemyRapier(int x, int y) :Enemy(x, y) {
 	collider = App->collision->AddCollider({ 0, 0, 24, 24 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	speed = 1.0f;
-	life = 5;
+	life = 2;
 	score = 100;
 }
 

@@ -32,9 +32,9 @@ EnemyCranberry::EnemyCranberry(int x, int y) : Enemy (x,y) {
 	collider = App->collision->AddCollider({ 106, 105, 28, 32 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	animation = &Idle;
-	life = 0;
+	life = 3;
 	score = 100;
-	speed = 1.0f;
+	speed = 0.8f;
 
 }
 

@@ -104,6 +104,9 @@
     <ClInclude Include="EnemyCranberry.h">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyBile.h">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -155,6 +158,9 @@
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClCompile>
     <ClCompile Include="EnemyCranberry.cpp">
+      <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBile.cpp">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClCompile>
   </ItemGroup>

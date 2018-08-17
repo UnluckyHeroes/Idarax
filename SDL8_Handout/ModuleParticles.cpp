@@ -26,6 +26,11 @@ ModuleParticles::ModuleParticles()
 	laser.anim.PushBack({249, 103, 16, 12});
 	laser.anim.speed = 0.2f;
 	laser.life = 3000;
+
+	EnemyShoot.anim.PushBack({ 232, 103, 16, 12 });
+	EnemyShoot.anim.PushBack({ 249, 103, 16, 12 });
+	EnemyShoot.anim.speed = 0.2f;
+	EnemyShoot.life = 3000;
 }
 
 ModuleParticles::~ModuleParticles()
