@@ -39,6 +39,9 @@
     <Filter Include="Modules\Enemies\Enemy Types\Room1">
       <UniqueIdentifier>{bff71028-5722-4d13-96ea-f77f1e137458}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\Map generation">
+      <UniqueIdentifier>{3335be66-375b-406d-9023-33a365d20034}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -101,6 +104,12 @@
     <ClInclude Include="EnemyRapier.h">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
     </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Modules\Map generation</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleFloor.h">
+      <Filter>Modules\Map generation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -150,6 +159,12 @@
     </ClCompile>
     <ClCompile Include="EnemyRapier.cpp">
       <Filter>Modules\Enemies\Enemy Types\Room1</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Modules\Map generation</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleFloor.cpp">
+      <Filter>Modules\Map generation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
