@@ -47,6 +47,7 @@ bool ModulePlayer::Start()
 	destroyed = false;
 	position.x = 150;
 	position.y = 120;
+	speed = 2;
 
 	current_animation = &idle;
 
@@ -72,26 +73,46 @@ update_status ModulePlayer::Update()
 {
 	//position.x += 1; // Automatic movement
 
-	int speed = 2;
 
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && (position.x - 1) > 70)
+
+	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && !stopLeft) {
+
 		position.x -= speed;
+		moveLeft = true;
+		moveRight = false;
+		
+	}
+	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && !stopRight) {
 
-	if(App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && (position.x + 28) < 408)
 		position.x += speed;
+		moveRight = true;
+		moveLeft = false;
 
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT && (position.y + 38) < 224)
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT && !stopDown) {
+
 		position.y += speed;
+		moveDown = true;
+		moveUp = false;
 
-	if(App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && (position.y - 5) > 39)
+		stopLeft = false;
+		stopRight = false;
+
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && !stopUp) {
+
 		position.y -= speed;
-  
-	//_______________________________________________________
+		moveUp= true;
+		moveDown = false;
 
-	/*if(App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
-	{
-		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, COLLIDER_PLAYER_SHOT);
-	}*/
+		stopLeft = false;
+		stopRight = false;
+
+	}
+  
+	//_________________________SHOOTING______________________________
 
 	if (App->input->keyboard[SDL_SCANCODE_UP] == KEY_STATE::KEY_DOWN) {
 
@@ -161,7 +182,41 @@ update_status ModulePlayer::Update()
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 
-	if(c1 == col && destroyed == false && App->fade->IsFading() == false)
+	if (c1->type == COLLIDER_WALL || c2->type == COLLIDER_WALL) {
+
+		if (moveRight == true) {
+
+			stopRight = true;
+			stopLeft = false;
+			stopUp = false;
+			stopDown = false;
+			
+		}
+		else if (moveLeft == true) {
+
+			stopLeft = true;
+			stopRight = false;
+			stopUp = false;
+			stopDown = false;
+		}
+		else if (moveUp == true) {
+
+			stopUp = true;
+			stopRight = false;
+			stopLeft = false;
+			stopDown = false;
+		}
+		else if (moveDown == true) {
+
+			stopDown = true;
+			stopRight = false;
+			stopLeft = false;
+			stopUp = false;
+		}
+
+	}
+
+	else if(c1 == col && destroyed == false && App->fade->IsFading() == false)
 	{
 	
 		App->fade->FadeToBlack((Module*)App->scene1, (Module*)App->scene_intro);
@@ -174,4 +229,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 		destroyed = true;
 	}
+
 }

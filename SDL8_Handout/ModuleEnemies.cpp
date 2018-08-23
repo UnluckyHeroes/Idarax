@@ -166,13 +166,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 			if (c1->type == COLLIDER_WALL || c2->type == COLLIDER_WALL) {
 
 				if (enemies[i]->position.x < (SCREEN_SIZE / 2))
-					enemies[i]->position.x += enemies[i]->speed;
+					enemies[i]->position.x -= enemies[i]->speed;
 
 				else if (enemies[i]->position.x > (SCREEN_SIZE / 2))
 					enemies[i]->position.x -= enemies[i]->speed;
 
 				else if (enemies[i]->position.y > 100)
-					enemies[i]->position.y -= (enemies[i]->speed);
+					enemies[i]->position.y += (enemies[i]->speed);
 
 				else if (enemies[i]->position.y < 100)
 					enemies[i]->position.y += (enemies[i]->speed);

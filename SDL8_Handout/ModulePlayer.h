@@ -30,7 +30,25 @@ public:
 	Animation left;
 	iPoint position;
 	Collider* col;
+
+	int speed;
 	bool destroyed = false;
+
+public:
+
+	//Movement Limitation
+	bool moveRight = false;
+	bool stopRight = false;
+
+	bool moveLeft = false;
+	bool stopLeft = false;
+
+	bool moveUp = false;
+	bool stopUp = false;
+
+	bool moveDown = false;
+	bool stopDown = false;
+
 };
 
 #endif

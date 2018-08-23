@@ -7,6 +7,7 @@
 #include "Animation.h"
 #include "ModuleTextures.h"
 #include "ModuleEnemies.h"
+#include "ModuleInput.h"
 
 
 struct SDL_Texture;
@@ -79,4 +80,5 @@ void EnemyRapier::Move() {
 	//position.y += speed*0.02*(playerPosition.y - position.y);
 	position.x += speed * -1*(SDL_cos(radians)); //MOVEMENT
 	position.y += speed * -1*(SDL_sin(radians));
+
 }
